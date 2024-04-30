@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .galeria{
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        .galeria div{
+            text-align: center;
+        }
+        img{
+            display: block;
+            margin: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Galeria Imagenes</h1>
+
+    <div style="text-align: center; margin-bottom: 20px;">
+        <input type="text" id="imagenURL" placeholder="URL imagen">
+        <input type="text" id="pieFoto" placeholder="pie foto">
+        <button onclick="aggimg()">Agregar imagen</button>
+
+    </div>
+
+    <div class="galeria" id="galeriaImg">
+        <div>
+            <img src="img/paisaje1.jpg" alt="img1" width="300" height="250">
+            <p>Pie de foto img1</p>
+        </div>
+        <div>
+            <img src="img/paisaje2.jpg" alt="img2" width="300" height="250">
+            <p>Pie de foto img2</p>
+        </div>
+        <div>
+            <img src="img/paisaje3.jpg" alt="img3" width="300" height="250">
+            <p>Pie de foto img3</p>
+        </div>
+        <div>
+            <img src="img/paisaje4.jpg" alt="img4" width="300" height="250">
+            <p>Pie de foto img4</p>
+        </div>
+
+    </div>
+    <script >
+        function aggimg(){
+            var url = document.getElementById("imagenURL").value;
+            var pie = document.getElementById("pieFoto").value;
+            var galeria = document.getElementById("galeriaImg");
+
+            if(url && pie){
+                var div = document.createElement("div");
+                var img = document.createElement("img");
+                var p = document.createElement("p");
+
+                img.src = url;
+                
+                p.textContent = pie;
+
+                div.appendChild(img);
+                div.appendChild(p);
+                galeria.appendChild(div);
+
+                document.getElementById("imagenURL").value="";
+                document.getElementById("pieFoto").value="";
+            }else{
+                alert("Debe ingresar una URL y un pie de foto");
+                return;
+            }
+            
+        }
+    </script>
+
+
+</body>
+</html>
