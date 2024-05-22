@@ -1,0 +1,1 @@
+El repositorio está basado en el curso de <a href="https://www.youtube.com/watch?v=nAe_a1mdNDY&list=PLU8oAlHdN5BmlVfm2bJshR3qPtoyukQ_b&pp=iAQB">ReactJS</a> del canal de YouTube <a href="www.youtube.com/user/pildorasinformaticas">Pildoras Informáticas</a>.
