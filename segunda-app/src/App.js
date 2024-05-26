@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import video from "./assets/video.mp4";
+import video from './assets/video.mp4';
 
 function App() {
 
@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       <video ref={videoRef} width={400}>
-        <src src={video} type="video/mp4" />
+        <source src={video} type="video/mp4" ></source>
       </video>
       <div>
         <button onClick={actPlay}>
