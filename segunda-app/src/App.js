@@ -1,29 +1,27 @@
-import './App.css';
-import React, {useState} from 'react';
-
+import React, { useRef } from "react";
+import video from "./assets/video.mp4";
 
 function App() {
 
-  const [res, setRes] = useState(null)
+  const videoRef = useRef(null);
+  const actPlay = () => { videoRef.current.play() };
+  const actPause = () => { videoRef.current.pause() };
 
-  const elemento = <h1 className="centrar-titulo">Hola mundo</h1>
-  //const elemento2 = <div>{suma(5, 5)}</div>
-
-  const botonPulsado = () => {
-    const result = suma(7, 5);
-    setRes(result)
-  } 
-
-  return <div>
-    <button onClick={botonPulsado} style={{marginTop:"10px", marginLeft: "10px"}}>Pulsame</button>
-    <div>{elemento}</div>
-    <div>{res != null && <h2>El resultado es: {res}</h2>}</div>
-  </div>
-
-}
-
-function suma(a, b) {
-  return a + b
+  return (
+    <div>
+      <video ref={videoRef} width={400}>
+        <src src={video} type="video/mp4" />
+      </video>
+      <div>
+        <button onClick={actPlay}>
+          Play
+        </button>
+        <button onClick={actPause}>
+          Pause
+        </button>
+      </div>
+    </div>
+  );
 }
 
 export default App;
